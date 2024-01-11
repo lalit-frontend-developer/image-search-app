@@ -22,10 +22,6 @@ async function searchImages(){
 		searchResults.innerHTML = ""
 	}
 
-	if(results.length == 0){
-		searchResults.innerHTML = "NO Image Found"
-	}
-
 	results.map((result)=>{
 		const imageWrapper = document.createElement('div')
 		imageWrapper.classList.add("box")
@@ -42,6 +38,10 @@ async function searchImages(){
 		imageWrapper.appendChild(image)
 		imageWrapper.appendChild(imageLink)
 		searchResults.appendChild(imageWrapper)
+
+		if(results.length == 0){
+			searchResults.innerHTML = "NO Image Found"
+		}
 	});
 
 	page++
